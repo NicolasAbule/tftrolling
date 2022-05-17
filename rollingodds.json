@@ -1,0 +1,86 @@
+{
+    "lvl1": {
+        "tier1": 100,
+        "tier2": 0,
+        "tier3": 0,
+        "tier4": 0,
+        "tier5": 0
+    },
+    "lvl2": {
+        "tier1": 100,
+        "tier2": 0,
+        "tier3": 0,
+        "tier4": 0,
+        "tier5": 0
+    },
+    "lvl3": {
+        "tier1": 75,
+        "tier2": 25,
+        "tier3": 0,
+        "tier4": 0,
+        "tier5": 0
+    },
+    "lvl4": {
+        "tier1": 55,
+        "tier2": 30,
+        "tier3": 15,
+        "tier4": 0,
+        "tier5": 0
+    },
+    "lvl5": {
+        "tier1": 45,
+        "tier2": 33,
+        "tier3": 20,
+        "tier4": 2,
+        "tier5": 0
+    },
+    "lvl6": {
+        "tier1": 25,
+        "tier2": 40,
+        "tier3": 30,
+        "tier4": 5,
+        "tier5": 0
+    },
+    "lvl7": {
+        "tier1": 19,
+        "tier2": 30,
+        "tier3": 35,
+        "tier4": 15,
+        "tier5": 1
+    },
+    "lvl8": {
+        "tier1": 16,
+        "tier2": 20,
+        "tier3": 35,
+        "tier4": 25,
+        "tier5": 4
+    },
+    "lvl9": {
+        "tier1": 9,
+        "tier2": 15,
+        "tier3": 30,
+        "tier4": 30,
+        "tier5": 16
+    },
+    "lvl10": {
+        "tier1": 5,
+        "tier2": 10,
+        "tier3": 20,
+        "tier4": 40,
+        "tier5": 25
+    },
+    "lvl11": {
+        "tier1": 1,
+        "tier2": 2,
+        "tier3": 12,
+        "tier4": 50,
+        "tier5": 35
+    },
+    "pool":{
+        "tier1": 29,
+        "tier2": 22,
+        "tier3": 18,
+        "tier4": 12,
+        "tier5": 10
+    }
+}
