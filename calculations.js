@@ -16,6 +16,8 @@ document.getElementById("end").addEventListener("click", function(){
             var t2pool;
             var t2max;
 
+            console.log(t2);
+
             switch (level){
                 case "1":
                     t2lvl = t2.lvl1;
@@ -80,7 +82,7 @@ document.getElementById("end").addEventListener("click", function(){
                     break;
             }
 
-            document.getElementById("result").innerHTML = onePercentage(t2lvl, t2pool, t2max, totalc, totalp);
+            document.getElementById("result").innerHTML = "for one champion ev is " + onePercentage(t2lvl, t2pool, t2max, totalc, totalp);
         });
         
 });
@@ -90,8 +92,8 @@ var onePercentage = function(poolPercentage, pool, poolMax, totalc, totalp){
     var sum;
     const remainingPool = poolMax - totalp;
     
-    sum = (poolPercentage * ((pool - totalc)/remainingPool))/20;
+    sum = (((pool - totalc)/remainingPool) * poolPercentage/20);
     
-    return sum;
+    return 1/sum;
 
 }
