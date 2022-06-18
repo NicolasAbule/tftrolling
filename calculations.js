@@ -1,4 +1,34 @@
-document.getElementById("end").addEventListener("click", function(){
+function onePercentage(poolPercentage, pool, poolMax, totalc, totalp, goldenTicket){
+
+    var sum;
+    const remainingPool = poolMax - totalp;
+    
+    sum = (((pool - totalc)/remainingPool) * poolPercentage/20);
+    
+    var rolls = (1/sum);
+
+    if (goldenTicket == true){
+        return rolls;
+    }
+    else{
+        return rolls * 2;
+    }
+
+}
+
+function levelChange(level){
+
+    document.getElementById("level").value = level;
+
+}
+
+function tierChange(tier){
+
+    document.getElementById("tierbuy").value = tier;
+
+}
+
+function change(){
 
     fetch('https://nicolasabule.github.io/tftrolling/rollingodds.json')
         .then(response => response.json())
@@ -11,12 +41,11 @@ document.getElementById("end").addEventListener("click", function(){
             var tierbuy = document.getElementById('tierbuy').value;
             var totalc = document.getElementById('totalc').value;
             var totalp = document.getElementById('totalp').value;
+            var goldenT = document.getElementById('goldenTicket').checked;
 
             var t2lvl;
             var t2pool;
             var t2max;
-
-            console.log(t2);
 
             switch (level){
                 case "1":
@@ -82,18 +111,7 @@ document.getElementById("end").addEventListener("click", function(){
                     break;
             }
 
-            document.getElementById("result").innerHTML = "for one champion ev is " + onePercentage(t2lvl, t2pool, t2max, totalc, totalp);
+            document.getElementById("result").innerHTML = "for one champion ev is " + onePercentage(t2lvl, t2pool, t2max, totalc, totalp, goldenT) + " gold";
         });
         
-});
-
-var onePercentage = function(poolPercentage, pool, poolMax, totalc, totalp){
-
-    var sum;
-    const remainingPool = poolMax - totalp;
-    
-    sum = (((pool - totalc)/remainingPool) * poolPercentage/20);
-    
-    return 1/sum;
-
 }

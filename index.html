@@ -2,15 +2,50 @@
 
 <html>
 
-<button id="end"></button>
+<script src="./calculations.js"></script>
 
-<input type="number" id="level" min="1" max="11">
-<input type="number" id="tierbuy" min="1" max="5">
-<input type="number" id="totalc" min="0" max="29">
-<input type="number" id="totalp" min="0" max="377">
+
+<h1>Your Level</h1>
+<input type="number" onchange="change()" id="level" value="1" min="1"max="11">
+
+<button type="button"onclick="levelChange(1)">1</button>
+<button type="button"onclick="levelChange(2)">2</button>
+<button type="button"onclick="levelChange(3)">3</button>
+<button type="button"onclick="levelChange(4)">4</button>
+<button type="button"onclick="levelChange(5)">5</button>
+<button type="button"onclick="levelChange(6)">6</button>
+<button type="button"onclick="levelChange(7)">7</button>
+<button type="button"onclick="levelChange(8)">8</button>
+<button type="button"onclick="levelChange(9)">9</button>
+<button type="button"onclick="levelChange(10)">10</button>
+<button type="button"onclick="levelChange(11)">11</button>
+
+<p>Bard Doot Calculator</p>
+<input type="number" id="tier1" value="" min="0" max="100">
+<input type="number" id="tier2" value="" min="0" max="100">
+<input type="number" id="tier3" value="" min="0" max="100">
+<input type="number" id="tier4" value="" min="0" max="100">
+<input type="number" id="tier5" value="" min="0" max="100">
+
+<h1>The Tier you want to buy</h1>
+<input type="number" onchange="change()" id="tierbuy" value="1" min="1" max="5">
+
+<button type="button"onclick="tierChange(1)">1</button>
+<button type="button"onclick="tierChange(2)">2</button>
+<button type="button"onclick="tierChange(3)">3</button>
+<button type="button"onclick="tierChange(4)">4</button>
+<button type="button"onclick="tierChange(5)">5</button>
+
+<h1># of desired champions taken</h1>
+<input type="number" onchange="change()" id="totalc" value="0" min="0" max="29">
+
+<h1># of champions in tier taken</h1>
+<input type="number" onchange="change()" id="totalp" value="0" min="0" max="377">
+
+<h1>Golden Ticket</h1>
+<input type="checkbox" id="goldenTicket">
+
 
 <p id="result">0</p>
-
-<script src="./calculations.js"></script>
 
 </html>
