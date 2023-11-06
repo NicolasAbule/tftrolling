@@ -1,30 +1,54 @@
-function onePercentage(poolPercentage, pool, poolMax, totalc, totalp, goldenTicket){
+var chartWeb = document.getElementById("myChart");
+
+var chart = new Chart(chartWeb, {
+    type: "bar",
+    data: {
+        labels: ['1','2','3'],
+        datasets: [{
+            label: "average amount of rolls to get # of units",
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            color: '#000000'
+		}]
+	},
+	options: {
+		scales: {
+			y: {
+				suggestedMin: 0,
+				suggestedMax: 25,
+				beginAtZero: true
+			}
+		},
+    }
+})
+
+function onePercentage(poolPercentage, pool, poolMax, totalc, totalp, num){
 
     var sum;
-    const remainingPool = poolMax - totalp;
+    var remainingPool = poolMax - totalp;
     
     sum = (((pool - totalc)/remainingPool) * poolPercentage/20);
+
+    if ((pool - totalc) <= 0){sum = 0};
     
     var rolls = (1/sum);
+    
+    if (num > 1) {return (rolls + (onePercentage(poolPercentage, pool, poolMax, totalc + 1, totalp + 1, num - 1)));}
 
-    if (goldenTicket == true){
-        return rolls;
-    }
-    else{
-        return rolls * 2;
-    }
+    return rolls;
 
 }
 
 function levelChange(level){
 
     document.getElementById("level").value = level;
+    change();
 
 }
 
 function tierChange(tier){
 
     document.getElementById("tierbuy").value = tier;
+    change();
 
 }
 
@@ -41,7 +65,6 @@ function change(){
             var tierbuy = document.getElementById('tierbuy').value;
             var totalc = document.getElementById('totalc').value;
             var totalp = document.getElementById('totalp').value;
-            var goldenT = document.getElementById('goldenTicket').checked;
 
             var t2lvl;
             var t2pool;
@@ -111,7 +134,19 @@ function change(){
                     break;
             }
 
-            document.getElementById("result").innerHTML = "for one champion ev is " + onePercentage(t2lvl, t2pool, t2max, totalc, totalp, goldenT) + " gold";
+            document.getElementById("result").innerHTML = "for one champion ev is " + onePercentage(t2lvl, t2pool, t2max, totalc, totalp, 1) + " rolls";
+            chartChange(t2lvl, t2pool, t2max, totalc, totalp);
         });
         
+}
+
+function chartChange(poolPercentage, pool, poolMax, totalc, totalp){
+
+    chart.data.datasets = [{
+        label: "average amount of rolls to get # of units",
+        data: [onePercentage(poolPercentage, pool, poolMax, totalc, totalp, 1), onePercentage(poolPercentage, pool, poolMax, totalc, totalp, 2),
+            onePercentage(poolPercentage, pool, poolMax, totalc, totalp, 3)]
+    }];
+    chart.update();
+
 }

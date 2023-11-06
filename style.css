@@ -1,0 +1,52 @@
+body {
+  background-image: linear-gradient(to right,rgb(118,118,106), rgb(51,51,51));
+  height: 100%;
+}
+
+h1{
+    font-family: 'Mate', serif;
+    font-size: 5em;
+    font-weight: 200;
+    position:static;
+    display:block;
+    text-align: center;
+    color: rgb(0,0,0);
+}
+
+h2{
+    font-family: 'Mate', serif;
+    font-size: 2em;
+    font-weight: 200;
+    position:static;
+    display:block;
+    text-align: left;
+    color: rgb(0,0,0);
+}
+
+.button {
+  background-color: #36A9AE;
+  background-image: linear-gradient(#37ADB2, #329CA0);
+  border: 1px solid #2A8387;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  float: left;
+  font-family: 'Mate', serif;
+  font-size: 17px;
+  line-height: 100%;
+  
+  width: 4%;
+}
+
+.button:hover {
+  box-shadow: rgba(255, 255, 255, 0.3) 0 0 2px inset, rgba(0, 0, 0, 0.4) 0 1px 2px;
+  text-decoration: none;
+  transition-duration: .15s, .15s;
+}
+
+.button:active {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px inset, rgba(0, 0, 0, 0.4) 0 1px 1px;
+}
